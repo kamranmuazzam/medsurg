@@ -27,7 +27,7 @@ requestFunction = () => {
             latestResult = ['326 Final Professional M.B.B.S. Examination of July 2022 (Old Curriculum)']
             if (optionTexts[0]==latestResult)
             {
-                console.log("%c" + "Same", "color: green; -webkit-text-stroke: 2px black; font-size: 72px; font-weight: bold;");
+                console.log("%c" + "Result Not Uploaded", "color: green; -webkit-text-stroke: 2px black; font-size: 60px; font-weight: bold;");
 
                 // console.log("%csame","color:green")
                 setTimeout(()=> {
@@ -36,7 +36,7 @@ requestFunction = () => {
             }
             else
             {
-                console.log("%c" + "Different!", "color: red; -webkit-text-stroke: 2px black; font-size: 72px; font-weight: bold;");
+                console.log("%c" + "Result Uploaded!", "color: red; -webkit-text-stroke: 2px black; font-size: 60px; font-weight: bold;");
                 // console.log("%cdifferent","color:red")
                 console.log("%c" + optionTexts[0], "color: red; font-size: 25px; font-weight: bold;");
                 alert_sound.play()
