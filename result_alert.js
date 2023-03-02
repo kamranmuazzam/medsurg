@@ -9,6 +9,42 @@ countDown = () => {
     }, 1000);
 }
 
+oldOptionTexts = [
+    "326 Final Professional M.B.B.S. Examination of July 2022 (Old Curriculum)",
+    "322 Final Professional M.B.B.S. Examination of November 2022 (Supplementary)",
+    "203 Final Professional M.B.B.S. Examination of January 2022 (Old Curriculum)",
+    "202 Second Professional M.B.B.S. Examination of January 2022 (Old Curriculum)",
+    "201 Final Professional M.B.B.S. Examination of May 2022 (New Curriculum)",
+    "200 Third Professional M.B.B.S. Examination of May 2022 (New Curriculum)",
+    "199 Second Professional M.B.B.S. Examination of May 2022 (New Curriculum)",
+    "198 First Professional M.B.B.S. Examination of May 2022 (New Curriculum)",
+    "135 Final Professional M.B.B.S. Examination of November 2021",
+    "132 First Professional M.B.B.S. Examination of January 2022 (Old Curriculum)",
+    "129 First Professional M.B.B.S. Examination of November 2021 (Supplementary)",
+    "126 Final Professional M.B.B.S. Examination of July 2021",
+    "125 Final Professional M.B.B.S. Examination of May 2021 (Supplementary)",
+    "124 First Professional M.B.B.S. Examination of May 2021",
+    "106 First Professional M.B.B.S. Examination of July 2021 (Supplementary)",
+    "105 Second Professional M.B.B.S. Examination of July 2021 (Supplementary)",
+    "100 Third Professional M.B.B.S. Examination of May 2021 (Supplementary)",
+    "99 Second Professional M.B.B.S. Examination of May 2021 (Supplementary)",
+    "98 First Professional M.B.B.S. Examination of May 2021 (Supplementary)",
+    "33 Final Professional M.B.B.S. Examination of January 2021",
+    "32 Final Professional M.B.B.S. Examination of November 2020",
+    "30 Second Professional M.B.B.S. Examination of May 2020",
+    "29 First Professional M.B.B.S. Examination of November 2020",
+    "28 Second Professional M.B.B.S. Examination of November 2020",
+    "27 First Professional M.B.B.S. Examination of May 2020",
+    "11 2nd Professional MBBS Examination of July 2020",
+    "10 First Professional MBBS Examination of July 2020",
+    "9 3rd Professional MBBS Examination of  November 2020 ",
+    "8 3rd Professional MBBS Examination of May 2020",
+    "2 Final Professional MBBS Examination of July 2020 (Supplementary)",
+    "1 Final Professional MBBS Examination of May 2020  (Supplementary)"
+]
+
+
+
 requestFunction = () => {
     console.log("requesting...")
     countDown();
@@ -25,7 +61,9 @@ requestFunction = () => {
             }
             // console.log(optionTexts)
             latestResult = ['326 Final Professional M.B.B.S. Examination of July 2022 (Old Curriculum)']
-            if (optionTexts[0]==latestResult)
+            console.log(optionTexts)
+            newOptionTexts = optionTexts.filter(d => !oldOptionTexts.includes(d))
+            if (newOptionTexts==0)
             {
                 console.log("%c" + "Result Not Uploaded", "color: green; -webkit-text-stroke: 2px black; font-size: 60px; font-weight: bold;");
 
@@ -38,7 +76,9 @@ requestFunction = () => {
             {
                 console.log("%c" + "Result Uploaded!", "color: red; -webkit-text-stroke: 2px black; font-size: 60px; font-weight: bold;");
                 // console.log("%cdifferent","color:red")
-                console.log("%c" + optionTexts[0], "color: red; font-size: 25px; font-weight: bold;");
+                newOptionTexts.map(c=>{
+                    console.log("%c" + c, "color: red; font-size: 25px; font-weight: bold;");
+                })
                 alert_sound.play()
             }
         }
@@ -53,3 +93,4 @@ alert_sound.loop = true;
 // alert_sound.play()
 requestFunction();
     
+
